@@ -28,13 +28,13 @@ y_pred = knn.predict(x_test)
 
 # evaluate the model performance
 print("Accuracy: ", accuracy_score(y_test, y_pred))
-print("Confusion Matrix: \n", confusion_matrix(y_test, y_pred))
+#print("Confusion Matrix: \n", confusion_matrix(y_test, y_pred))
 
-# create new data for predictions
+'''# create new data for predictions
 new_data = [[8,10,6]]
 
 # make predictions on new data
 predictions = knn.predict(new_data)
 
 #print the predictions
-print(predictions)
+print(predictions)'''

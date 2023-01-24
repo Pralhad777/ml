@@ -9,14 +9,16 @@ from sklearn.model_selection import train_test_split
 
 
 # read the data
-data = pd.read_csv("book1.csv")
+data = pd.read_csv("student-mat1 (Autosaved).csv")
 
-# select the relevant columns
-data = data[["average", "absent", "studyhr", "advice"]]
+
+# select the relevant rows and columns
+data = data.iloc[1:115]
+data = data[["G3", "absences",  "studytime", "advice"]]
 print(data.info())
 
 # separate the predictors and the target variable
-x = data[["average", "absent", "studyhr"]]
+x = data[["G3", "absences", "studytime"]]
 y = data["advice"]
 
 # split the data into training and testing sets
@@ -32,7 +34,7 @@ svc.fit(x_train, y_train)
 y_pred = svc.predict(x_test)
 
 
-# create new data for predictions
+'''# create new data for predictions
 new_data = [[70, 5, 8], [55, 18, 5], [39, 4, 6]]
 
 # make predictions on new data
@@ -60,13 +62,14 @@ for matrics in new_data:
     if predictions1[length-1] == '>':
         predictions1 = predictions1[:length-2]
         
-    print(predictions1)
+    print(predictions1)'''
 
 # evaluate the model performance
-confusion_matrix = confusion_matrix(y_test, y_pred)
 print("Accuracy: ", accuracy_score(y_test, y_pred))
-print("Confusion Matrix: \n", confusion_matrix)
+'''confusion_matrix = confusion_matrix(y_test, y_pred)
 
+print("Confusion Matrix: \n", confusion_matrix)
+'''
 # Displying using
 
 
